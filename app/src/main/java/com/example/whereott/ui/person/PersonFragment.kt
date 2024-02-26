@@ -24,6 +24,7 @@ import retrofit2.Response
 class PersonFragment : Fragment() {
     lateinit var root : View
 
+
     private lateinit var popularPerson: RecyclerView
     private lateinit var popularPersonAdapter: PersonAdapter
     private lateinit var popularPersonLayoutMgr: LinearLayoutManager
@@ -117,7 +118,7 @@ class PersonFragment : Fragment() {
         // 배우 검색이라면 해당 배우의 출연작을 표시하기 위한 작업을 수행할 수 있습니다.
         // 이는 실제 데이터 소스 및 API에 따라 달라질 수 있습니다.
         // 영화 검색 API를 호출하고 결과를 처리하는 콜백 정의
-        api.searchActor("beb95ad63fd33a8568136afbb01979a1", query, 1).enqueue(object :
+        api.searchPerson("beb95ad63fd33a8568136afbb01979a1", query, 1).enqueue(object :
             Callback<GetPersonResponse> {
             override fun onResponse(call: Call<GetPersonResponse>, response: Response<GetPersonResponse>) {
                 if (response.isSuccessful) {

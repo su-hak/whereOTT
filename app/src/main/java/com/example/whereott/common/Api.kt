@@ -43,8 +43,8 @@ interface Api {
         @Query("language") language: String = "ko-KR,en-US"
     ): Call<GetTVResponse>
 
-    @GET("search/actor")
-    fun searchActor(
+    @GET("search/person")
+    fun searchPerson(
         @Query("api_key") apiKey: String,
         @Query("query") query: String,
         @Query("page") page: Int,
